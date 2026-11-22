@@ -17,6 +17,7 @@
 		<java.version>21</java.version>
 		<byte-buddy.version>1.14.11</byte-buddy.version>
 		<sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+		<sonar.coverage.exclusions>**/Ejercicio5MyApiGestorApplication.java</sonar.coverage.exclusions>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -60,6 +61,11 @@
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.12</version>
+				<configuration>
+					<excludes>
+						<exclude>com/mx/cbtis/gestor/Ejercicio5MyApiGestorApplication.class</exclude>
+					</excludes>
+				</configuration>
 				<executions>
 					<execution>
 						<goals><goal>prepare-agent</goal></goals>
