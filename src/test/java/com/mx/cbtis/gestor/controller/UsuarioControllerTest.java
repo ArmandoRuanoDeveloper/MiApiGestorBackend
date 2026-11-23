@@ -69,4 +69,22 @@ class UsuarioControllerTest {
         assertEquals(1, controller.deleteUsuario(u));
         verify(repo).delete(u);
     }
+
+        @Test
+    void addUsuario_conNull_devuelve0() {
+        assertEquals(0, controller.addUsuario(null));
+        verifyNoInteractions(repo);
+    }
+
+    @Test
+    void updateUsuario_conNull_devuelve0() {
+        assertEquals(0, controller.updateUsuario(null));
+        verifyNoInteractions(repo);
+    }
+
+    @Test
+    void deleteUsuario_conNull_devuelve0() {
+        assertEquals(0, controller.deleteUsuario(null));
+        verifyNoInteractions(repo);
+    }
 }

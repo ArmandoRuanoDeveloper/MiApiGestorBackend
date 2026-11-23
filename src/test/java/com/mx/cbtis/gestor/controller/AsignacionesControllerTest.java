@@ -53,4 +53,22 @@ class AsignacionesControllerTest {
         assertEquals(1, controller.deleteAsignacion(a));
         verify(repo).delete(a);
     }
+
+        @Test
+    void addAsignacion_conNull_devuelve0() {
+        org.junit.jupiter.api.Assertions.assertEquals(0, controller.addAsignacion(null));
+        org.mockito.Mockito.verifyNoInteractions(repo);
+    }
+
+    @Test
+    void updateAsignacion_conNull_devuelve0() {
+        org.junit.jupiter.api.Assertions.assertEquals(0, controller.updateAsignacion(null));
+        org.mockito.Mockito.verifyNoInteractions(repo);
+    }
+
+    @Test
+    void deleteAsignacion_conNull_devuelve0() {
+        org.junit.jupiter.api.Assertions.assertEquals(0, controller.deleteAsignacion(null));
+        org.mockito.Mockito.verifyNoInteractions(repo);
+    }
 }

@@ -55,4 +55,22 @@ class TareasControllerTest {
         assertEquals(1, controller.deleteTareas(t));
         verify(repo).delete(t);
     }
+
+        @Test
+    void addTareas_conNull_devuelve0() {
+        org.junit.jupiter.api.Assertions.assertEquals(0, controller.addTareas(null));
+        org.mockito.Mockito.verifyNoInteractions(repo);
+    }
+
+    @Test
+    void updateTareas_conNull_devuelve0() {
+        org.junit.jupiter.api.Assertions.assertEquals(0, controller.updateTareas(null));
+        org.mockito.Mockito.verifyNoInteractions(repo);
+    }
+
+    @Test
+    void deleteTareas_conNull_devuelve0() {
+        org.junit.jupiter.api.Assertions.assertEquals(0, controller.deleteTareas(null));
+        org.mockito.Mockito.verifyNoInteractions(repo);
+    }
 }

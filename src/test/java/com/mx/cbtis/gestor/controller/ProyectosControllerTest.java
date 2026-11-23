@@ -53,4 +53,22 @@ class ProyectosControllerTest {
         assertEquals(1, controller.deleteProyecto(p));
         verify(repo).delete(p);
     }
+
+        @Test
+    void addProyecto_conNull_devuelve0() {
+        org.junit.jupiter.api.Assertions.assertEquals(0, controller.addProyecto(null));
+        org.mockito.Mockito.verifyNoInteractions(repo);
+    }
+
+    @Test
+    void updateProyecto_conNull_devuelve0() {
+        org.junit.jupiter.api.Assertions.assertEquals(0, controller.updateProyecto(null));
+        org.mockito.Mockito.verifyNoInteractions(repo);
+    }
+
+    @Test
+    void deleteProyecto_conNull_devuelve0() {
+        org.junit.jupiter.api.Assertions.assertEquals(0, controller.deleteProyecto(null));
+        org.mockito.Mockito.verifyNoInteractions(repo);
+    }
 }

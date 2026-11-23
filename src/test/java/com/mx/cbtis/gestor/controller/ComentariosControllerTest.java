@@ -58,4 +58,22 @@ class ComentariosControllerTest {
         assertEquals(1, controller.deleteComentario(c));
         verify(repo).delete(c);
     }
+
+        @Test
+    void addComentario_conNull_devuelve0() {
+        org.junit.jupiter.api.Assertions.assertEquals(0, controller.addComentario(null));
+        org.mockito.Mockito.verifyNoInteractions(repo);
+    }
+
+    @Test
+    void updateComentario_conNull_devuelve0() {
+        org.junit.jupiter.api.Assertions.assertEquals(0, controller.updateComentario(null));
+        org.mockito.Mockito.verifyNoInteractions(repo);
+    }
+
+    @Test
+    void deleteComentario_conNull_devuelve0() {
+        org.junit.jupiter.api.Assertions.assertEquals(0, controller.deleteComentario(null));
+        org.mockito.Mockito.verifyNoInteractions(repo);
+    }
 }
