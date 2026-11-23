@@ -18,8 +18,11 @@ import com.mx.cbtis.gestor.repository.ComentariosRepository;
 @RestController
 public class ComentariosController {
 	
-	@Autowired
-	ComentariosRepository comentariostable;
+    private final ComentariosRepository comentariostable;
+
+    public ComentariosController(ComentariosRepository comentariostable) {
+        this.comentariostable = comentariostable;
+    }
 	
 	@PostMapping("/getComentario")
 

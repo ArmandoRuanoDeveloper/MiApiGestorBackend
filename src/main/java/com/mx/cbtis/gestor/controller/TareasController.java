@@ -19,8 +19,11 @@ import com.mx.cbtis.gestor.repository.TareasRepository;
 @RestController
 public class TareasController {
 	
-	@Autowired
-	TareasRepository tareastable;
+	private final TareasRepository tareastable;
+
+    public TareasController(TareasRepository tareastable) {
+        this.tareastable = tareastable;
+    }
 	
 	@PostMapping("/getTarea")
 	public List<Tareas> getTarea(@RequestBody Tareas id_proyecto) {

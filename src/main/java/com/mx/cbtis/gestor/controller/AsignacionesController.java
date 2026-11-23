@@ -19,8 +19,11 @@ import com.mx.cbtis.gestor.repository.AsignacionesRepository;
 @RestController
 public class AsignacionesController {
 	
-	@Autowired
-	AsignacionesRepository asignacionestable;
+    private final AsignacionesRepository asignacionestable;
+
+    public AsignacionesController(AsignacionesRepository asignacionestable) {
+        this.asignacionestable = asignacionestable;
+    }
 	
 	@GetMapping("/buscarAsignacion")
 	public Asignaciones getAsignacion(@RequestParam int id) {

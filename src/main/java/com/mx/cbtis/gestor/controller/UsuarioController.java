@@ -18,8 +18,11 @@ import com.mx.cbtis.gestor.repository.UsuarioRepository;
 @RestController
 public class UsuarioController {
 	
-	@Autowired
-	UsuarioRepository usuariotable;
+	private final UsuarioRepository usuariotable;
+
+    public UsuarioController(UsuarioRepository usuariotable) {
+            this.usuariotable = usuariotable;
+    }
 	
 	@PostMapping("/getUsuarioLogin")
 	public Usuario getUsuarioLogin(@RequestBody Usuario userParam) {

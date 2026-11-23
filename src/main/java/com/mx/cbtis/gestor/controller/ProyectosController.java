@@ -18,8 +18,11 @@ import com.mx.cbtis.gestor.repository.ProyectosRepository;
 @RestController
 public class ProyectosController {
 	
-	@Autowired 
-	ProyectosRepository proyectostable;
+	private final ProyectosRepository proyectostable;
+
+	public ProyectosController(ProyectosRepository proyectostable) {
+		this.proyectostable = proyectostable;
+    }
 	
 	/*@PostMapping("/buscarProyecto")
 	public Proyectos getProyecto(@RequestBody Proyectos proyecto) {
